@@ -23,6 +23,24 @@ function App() {
       <Device name="iphone" price="$2000"></Device>
       <Device name="Watch" price="$200"></Device>
       <Device name="Trimmer" price="$80"></Device>
+      <Company
+        name="Star Tech"
+        address="Dhaka, Bangladesh"
+        service="IT Solutions"
+      ></Company>
+      <Company
+        name="Rayans"
+        address="Dhaka, Bangladesh"
+        service="IT Solutions"
+      ></Company>
+      <Company
+        name="Business IT"
+        address="Dhaka, Bangladesh"
+        service="IT Solutions"
+      ></Company>
+      <Cycle name="Mountain Bike" price="$500" brand="Trek"></Cycle>
+      <Cycle name="Speed Bike" price="$500" brand="Giant"></Cycle>
+      <Cycle name="Normal Bike" price="$500" brand="Trek"></Cycle>
       {/* ----------------------------------------------- */}
     </>
   );
@@ -48,25 +66,48 @@ function Greetings() {
     <div>
       <h2>Greetings!</h2>
       <p>
-        Hello dear <span className="name">{name}</span> you're successfully done to create a greetings using
-        react
+        Hello dear <span className="name">{name}</span> you're successfully done
+        to create a greetings using react
       </p>
     </div>
   );
 }
 
-
-
-// Dynamically Props using
-function Device(props){
+// Dynamically props using
+function Cycle(props) {
   return (
-    <div className="device-info"> 
-      <h2>Device Information</h2>
-      <p>Device Name: {props.name} </p>
-      <p>Price: <span className="price">{props.price}</span> </p>
-    </div>
-  )
+    <div className="cycle-info">
+      <h2>Cycle Information Using props</h2>
 
+      <p>Cycle Name: {props.name}</p>
+      <p>Cycle Price: {props.price}}</p>
+      <p>Brand : {props.brand}</p>
+    </div>
+  );
+}
+
+// Dynamically destructuring using
+function Device({ name, price }) {
+  return (
+    <div className="device-info">
+      <h2>Device Information</h2>
+      <p>Device Name: {name} </p>
+      <p>
+        Price: <span className="price">{price}</span>{" "}
+      </p>
+    </div>
+  );
+}
+
+function Company({ name, address, service }) {
+  return (
+    <div>
+      <h1>Company Information</h1>
+      <p>Company Name: {name}</p>
+      <p>Company Address: {address}</p>
+      <p>Company Service: {service}</p>
+    </div>
+  );
 }
 
 export default App;

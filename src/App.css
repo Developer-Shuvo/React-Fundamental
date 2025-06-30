@@ -75,3 +75,12 @@
   background-color: yellow;
   color: red;
 }
+
+.cycle-info{
+  background-color: azure;
+  border: 8px solid #15ce08;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 20px;
+  color: black;
+}
