@@ -16,9 +16,14 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      {/* ----------------------------------------------- */}
       <Name></Name>
       <Greetings></Greetings>
+      <Device name="MacBook Pro" price="$1999"></Device>
+      <Device name="iphone" price="$2000"></Device>
+      <Device name="Watch" price="$200"></Device>
+      <Device name="Trimmer" price="$80"></Device>
+      {/* ----------------------------------------------- */}
     </>
   );
 }
@@ -48,6 +53,20 @@ function Greetings() {
       </p>
     </div>
   );
+}
+
+
+
+// Dynamically Props using
+function Device(props){
+  return (
+    <div className="device-info"> 
+      <h2>Device Information</h2>
+      <p>Device Name: {props.name} </p>
+      <p>Price: <span className="price">{props.price}</span> </p>
+    </div>
+  )
+
 }
 
 export default App;
