@@ -2,6 +2,21 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import "./Aarong.css";
+import "./Aarong.jsx"
+import ConditionalRendering from "./Conditional-randering.jsx";
+
+
+// Define DressBrand component if not already defined or imported
+function DressBrand({ name, lowestPrice, highestPrice }) {
+  return (
+    <div className="dress-brand">
+      <h2>{name}</h2>
+      <p>Lowest Price: {lowestPrice}</p>
+      <p>Highest Price: {highestPrice}</p>
+    </div>
+  );
+}
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,7 +31,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      {/* ----------------------------------------------- */}
+      {/* ----------------------------------------------- */} <DressBrand name="Aarong" lowestPrice="$50" highestPrice="$500"></DressBrand>
       <Name></Name>
       <Greetings></Greetings>
       <Device name="MacBook Pro" price="$1999"></Device>
@@ -41,6 +56,9 @@ function App() {
       <Cycle name="Mountain Bike" price="$500" brand="Trek"></Cycle>
       <Cycle name="Speed Bike" price="$500" brand="Giant"></Cycle>
       <Cycle name="Normal Bike" price="$500" brand="Trek"></Cycle>
+
+
+<ConditionalRendering task= "Finish Learning React Immediately" isDone="YES"></ConditionalRendering>
       {/* ----------------------------------------------- */}
     </>
   );
@@ -80,7 +98,7 @@ function Cycle(props) {
       <h2>Cycle Information Using props</h2>
 
       <p>Cycle Name: {props.name}</p>
-      <p>Cycle Price: {props.price}}</p>
+      <p>Cycle Price: {props.price}</p>
       <p>Brand : {props.brand}</p>
     </div>
   );
